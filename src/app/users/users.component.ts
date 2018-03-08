@@ -14,7 +14,6 @@ export class UsersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => {
       this.users = [
         {
           firstName: 'John',
@@ -47,22 +46,13 @@ export class UsersComponent implements OnInit {
           }
         }
       ];
-      this.loaded = true;
-    }, 2000);
-    
+      
+      this.loaded = true;  
 
-    this.showExtended = false;
-
-    // this.addUser({
-    //   firstName: 'Robert',
-    //   lastName: 'Chang',
-    //   age: 24,
-    //   address: {
-    //     street: '555 Rainier st',
-    //     city: 'Dallas',
-    //     state: 'TX'
-    //   }
-    // })
+    this.addUser({
+      firstName: 'Robert',
+      lastName: 'Chang'
+    })
   }
 
   addUser(user: User){
