@@ -7,8 +7,6 @@
       city?: string,
       state?: string
     },
-    image?: any;
     isActive?: boolean;
-    balance?: number;
     registered?: any;
   }

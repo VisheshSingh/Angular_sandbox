@@ -11,8 +11,6 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
-  currentClasses: {};
-  currentStyles: {};
 
   constructor() { }
 
@@ -27,9 +25,7 @@ export class UsersComponent implements OnInit {
             city: 'Boston',
             state: 'MA'
           },
-          image:'https://placeimg.com/600/600/people/1',
           isActive: false,
-          balance: 100,
           registered: new Date("01/02/2018 08:30:00")
         },
         {
@@ -41,9 +37,7 @@ export class UsersComponent implements OnInit {
             city: 'New York',
             state: 'NY'
           },
-          image:'https://placeimg.com/600/600/people/2',
           isActive: true,
-          balance: 300,
           registered: new Date("03/11/2017 07:45:00")
         },
         {
@@ -55,15 +49,12 @@ export class UsersComponent implements OnInit {
             city: 'Princeton',
             state: 'NJ'
           },
-          image:'https://placeimg.com/600/600/people/3',
-          balance: 50,
+          
           registered: new Date("05/03/2017 02:30:00")
         }
       ];
       
-      this.loaded = true;  
-      this.setCurrentClasses();
-      this.setCurrentStyles();
+      this.loaded = true;
 
     // this.addUser({
     //   firstName: 'Robert',
@@ -73,20 +64,6 @@ export class UsersComponent implements OnInit {
 
   addUser(user: User){
     this.users.push(user);
-  }
-
-  setCurrentClasses(){
-    this.currentClasses = {
-      'btn-success': this.enableAdd,
-      'big-text': this.showExtended
-    }
-  }
-
-  setCurrentStyles(){
-    this.currentStyles= {
-      'padding-top': this.showExtended ? '0' : '40px',
-      'font-size': this.showExtended ? '' : '40px'
-    }
   }
 
 }
