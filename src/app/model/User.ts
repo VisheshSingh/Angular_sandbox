@@ -9,4 +9,6 @@
     },
     image?: any;
     isActive?: boolean;
+    balance?: number;
+    registered?: any;
   }

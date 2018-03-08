@@ -8,7 +8,7 @@ import { User } from '../model/User';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  showExtended: boolean = false;
+  showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
   currentClasses: {};
@@ -28,7 +28,9 @@ export class UsersComponent implements OnInit {
             state: 'MA'
           },
           image:'https://placeimg.com/600/600/people/1',
-          isActive: false
+          isActive: false,
+          balance: 100,
+          registered: new Date("01/02/2018 08:30:00")
         },
         {
           firstName: 'Kevin',
@@ -40,7 +42,9 @@ export class UsersComponent implements OnInit {
             state: 'NY'
           },
           image:'https://placeimg.com/600/600/people/2',
-          isActive: true
+          isActive: true,
+          balance: 300,
+          registered: new Date("03/11/2017 07:45:00")
         },
         {
           firstName: 'Peter',
@@ -51,7 +55,9 @@ export class UsersComponent implements OnInit {
             city: 'Princeton',
             state: 'NJ'
           },
-          image:'https://placeimg.com/600/600/people/3'
+          image:'https://placeimg.com/600/600/people/3',
+          balance: 50,
+          registered: new Date("05/03/2017 02:30:00")
         }
       ];
       
@@ -78,7 +84,8 @@ export class UsersComponent implements OnInit {
 
   setCurrentStyles(){
     this.currentStyles= {
-      'padding-top': this.showExtended ? '0' : '40px'
+      'padding-top': this.showExtended ? '0' : '40px',
+      'font-size': this.showExtended ? '' : '40px'
     }
   }
 
