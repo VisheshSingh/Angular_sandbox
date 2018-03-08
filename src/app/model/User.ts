@@ -9,4 +9,5 @@
     },
     isActive?: boolean;
     registered?: any;
+    hide?: boolean;
   }
