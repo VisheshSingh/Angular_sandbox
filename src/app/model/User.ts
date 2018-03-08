@@ -8,4 +8,5 @@
       state?: string
     },
     image?: any;
+    isActive?: boolean;
   }

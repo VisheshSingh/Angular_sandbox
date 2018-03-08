@@ -25,7 +25,8 @@ export class UsersComponent implements OnInit {
             city: 'Boston',
             state: 'MA'
           },
-          image:'http://lorempixel.com/600/600/people/5'
+          image:'https://placeimg.com/600/600/people/1',
+          isActive: false
         },
         {
           firstName: 'Kevin',
@@ -36,7 +37,8 @@ export class UsersComponent implements OnInit {
             city: 'New York',
             state: 'NY'
           },
-          image:'http://lorempixel.com/600/600/people/4'
+          image:'https://placeimg.com/600/600/people/2',
+          isActive: true
         },
         {
           firstName: 'Peter',
@@ -47,7 +49,7 @@ export class UsersComponent implements OnInit {
             city: 'Princeton',
             state: 'NJ'
           },
-          image:'http://lorempixel.com/600/600/people/1'
+          image:'https://placeimg.com/600/600/people/3'
         }
       ];
       
