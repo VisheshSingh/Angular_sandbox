@@ -1,34 +1,33 @@
 <div class="container">
   <button (click)="showUserForm  = !showUserForm" class="btn btn-dark mb-3">Add User</button>
-  <div class="card card-body" *ngIf="showUserForm">
+  <div class="card card-body mb-3" *ngIf="showUserForm">
     <h2>Add User</h2>
     <form (submit)="onSubmit($event)">
       <div class="form-group">
         <label>First Name</label>
-        <input (keydown)="fireEvent($event)" type="text" class="form-control" name="firstName">
+        <input type="text" class="form-control" name="firstName" [(ngModel)]="user.firstName">
       </div>
       <div class="form-group">
         <label>Last Name</label>
-        <input type="text" class="form-control" name="lastName">
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="user.lastName">
       </div>
       <div class="form-group">
         <label>Age</label>
-        <input type="number" class="form-control" name="age">
+        <input type="number" class="form-control" name="age" [(ngModel)]="user.age">
       </div>
       <div class="form-group">
         <label>Street</label>
-        <input type="text" class="form-control" name="street">
+        <input type="text" class="form-control" name="street" [(ngModel)]="user.address.street">
       </div>
       <div class="form-group">
         <label>City</label>
-        <input type="text" class="form-control" name="city">
+        <input type="text" class="form-control" name="city" [(ngModel)]="user.address.city">
       </div>
       <div class="form-group">
         <label>State</label>
-        <input type="text" class="form-control" name="state">
+        <input type="text" class="form-control" name="state" [(ngModel)]="user.address.state">
       </div>
-      <button [disabled]="!enableAdd" class="btn btn-block mb-2" (click)="addUser({firstName: 'Mary',
-    lastName: 'James',isActive: true})">Add User</button>
+      <button [disabled]="user.firstName == '' || user.lastName == ''" class="btn btn-block mb-2" (click)="addUser()">Add User</button>
     </form>
   </div>
 
