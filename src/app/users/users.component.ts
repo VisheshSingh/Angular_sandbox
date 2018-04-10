@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from '../model/User';
 
 @Component({
@@ -17,6 +17,7 @@ export class UsersComponent implements OnInit {
   loaded: boolean = false;
   enableAdd: boolean = false;
   showUserForm: boolean = false;
+  @ViewChild('userForm') form: any;
 
   constructor() { }
 
@@ -50,28 +51,33 @@ export class UsersComponent implements OnInit {
       this.loaded = true;
   }
 
-  addUser(){
-    this.user.isActive = true;
-    this.user.registered = new Date();
-    this.users.unshift(this.user);
-    this.user = {
-      firstName: '',
-      lastName: '',
-      email: ''
-    }
-  }
+  // addUser(){
+  //   this.user.isActive = true;
+  //   this.user.registered = new Date();
+  //   this.users.unshift(this.user);
+  //   this.user = {
+  //     firstName: '',
+  //     lastName: '',
+  //     email: ''
+  //   }
+  // }
 
   toggleHide(user: User){
     user.hide = !user.hide;
   }
 
-  onSubmit(e){
-    console.log(123);
-    e.preventDefault();
-  }
+  onSubmit({value, valid}:{value:User, valid:boolean}){
+    if(!valid){
+      console.log('Form is not valid');
+    }else {
+      value.isActive = true;
+      value.registered = new Date();
+      value.hide = true;
+      
+      this.users.unshift(value);
 
-  fireEvent(e){
-    console.log(e.type);
-    console.log(e.target.value);
+      this.form.reset();
+    }
+    
   }
 }
