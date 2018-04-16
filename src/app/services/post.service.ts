@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/observable';
 import { Post } from '../model/Post';
 
 const httpOption = {
-  headers: new HttpHeaders({'Content-Type': 'application.json'})
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
 }
 
 @Injectable()
@@ -18,6 +18,6 @@ export class PostService {
   }
 
   savePosts(post: Post): Observable<Post>{
-    return this.http.post<Post>(this.postsUrl, post);
+    return this.http.post<Post>(this.postsUrl, post, httpOption);
   }
 }
