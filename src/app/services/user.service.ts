@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../model/User';
 
 @Injectable()
-export class DataService {
+export class UserService {
   users: User[];
 
   constructor() { 
