@@ -24,6 +24,11 @@ export class PostService {
   updatePost(post: Post): Observable<Post> {
     const url = `${this.postsUrl}/${post.id}`;
     return this.http.put<Post>(url, post, httpOption);
+  }
 
+  removePost(post: Post | number): Observable<Post> {
+    const id = typeof post === 'number' ? post : post.id;
+    const url = `${this.postsUrl}/${id}`;
+    return this.http.delete<Post>(url, httpOption);
   }
 }
