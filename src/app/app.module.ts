@@ -14,6 +14,7 @@ import { PostFormComponent } from './post-form/post-form.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PostComponent } from './post/post.component';
     PostsComponent,
     PostFormComponent,
     HomeComponent,
-    PostComponent
+    PostComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
